@@ -1,0 +1,117 @@
+/*このファイルを編集しないでください!アニメーションが破損する可能性があります!*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #0a0a0a;
+  padding: 1rem 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #cccccc;
+  letter-spacing: 1px;
+}
+
+.container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.text-section {
+  max-width: 600px;
+  animation: slideIn 1s ease-out;
+}
+
+.text-section h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.text-section hr {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 1rem 0;
+  width: 60%;
+}
+
+.text-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  animation: fadeInGrid 1.5s ease-in;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.95;
+}
+
+.image-grid img:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInGrid {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* レスポンシブな調整 */
+@media (max-width: 768px) {
+  .text-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .container {
+    padding: 1.2rem;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
